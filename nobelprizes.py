@@ -4,6 +4,8 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os 
+os.chdir(r'C:\Users\REGGIE\Desktop\student\python for data analysis\course')
 
 def report(nobelprizeDict):
     # your code here
@@ -359,3 +361,12 @@ def plot_freqs(nobelprizeDict):
         plt.scatter(x, y, s=10 * np.array(y), c=y)
         plt.title(ele, fontsize=16)
         plt.show()
+        
+def main(): 
+    report('nobelprizes.json')
+    get_laureates_and_motivation('nobelprizes.json',2019,'chemistry')
+    plot_freqs('nobelprizes.json')
+
+    
+if __name__ == '__main__':
+    main()
